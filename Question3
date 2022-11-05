@@ -1,0 +1,26 @@
+import java.util.*;
+import java.text.*;
+
+//Question 3 
+public class Main {
+    public static void main(String[] args) {
+    //Part 1 
+    NumberFormat nf = NumberFormat.getInstance(Locale.UK);
+    nf.setMaximumFractionDigits(2);
+    System.out.println(nf.format(12345.6789));
+
+
+    //Part 2
+    NumberFormat currencyFormat =           NumberFormat.getCurrencyInstance(Locale.US);
+    System.out.println(currencyFormat.format(12345.678));
+
+  //Part 3
+    NumberFormat numformat = NumberFormat.getInstance(Locale.US);
+    try { 
+        Number num = numformat.parse("3,456.78");
+        System.out.println(num.doubleValue());
+    } catch (java.text.ParseException e) {
+        System.out.println("Number parse failed");
+    }
+}
+}

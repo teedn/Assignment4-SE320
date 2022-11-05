@@ -1,0 +1,43 @@
+import java.util.*;
+	 class assignment4 {
+public static void main(String[] args) {
+//Question 1
+
+Set<String> names1 = new LinkedHashSet<>();
+names1.add("George");
+names1.add("Jim");
+names1.add("John");
+names1.add("Blake");
+names1.add("Kevin");
+names1.add("Michael");
+System.out.print(names1);
+
+Set<String> names2 = new LinkedHashSet<>();
+names2.add("George");
+names2.add("Katie");
+names2.add("Kevin");
+names2.add("Michelle");
+names2.add("Ryan");
+System.out.println(names2);
+
+//Finding and displaying union of both sets
+Set<String> union = new LinkedHashSet<>(names1);
+union.addAll(names2);
+System.out.println("The union of both sets of names is: " + union);
+
+//Finding and displaying the difference of both sets
+Set<String> difference = new LinkedHashSet<>(names1);
+difference.removeAll(names2);
+System.out.println("The difference of both sets of names is: " + difference);
+
+//Finding and displaying the intersection of both sets
+Set<String> intersect = new LinkedHashSet<>();
+for (String a: names2) {
+    if (names1.contains(a))
+        intersect.add(a);
+}
+System.out.println("The intersection of both sets of names is: " + intersect);
+
+}
+
+     }
